@@ -1,0 +1,63 @@
+				<fieldset>
+					<legend>Balance</legend>
+					<dl class="dl-horizontal">
+  						<dt>Månelig indbetaling:</dt>
+						<dd>{$indbetaling}</dd>
+					</dl>
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Januar</th>
+							<th>Febuar</th>
+							<th>Marts</th>
+							<th>April</th>
+							<th>Maj</th>
+							<th>Juni</th>
+							<th>Juli</th>
+							<th>August</th>
+							<th>September</th>
+							<th>Oktober</th>
+							<th>November</th>
+							<th>December</th>
+						</tr>
+					</thead>
+					<tbody>
+{foreach from=$data item=info}
+	<tr>
+		<td>{$info['name']}</td>
+		<td>{$info[1]}</td>
+		<td>{$info[2]}</td>
+		<td>{$info[3]}</td>
+		<td>{$info[4]}</td>
+		<td>{$info[5]}</td>
+		<td>{$info[6]}</td>
+		<td>{$info[7]}</td>
+		<td>{$info[8]}</td>
+		<td>{$info[9]}</td>
+		<td>{$info[10]}</td>
+		<td>{$info[11]}</td>
+		<td>{$info[12]}</td>
+	</tr>
+{/foreach}
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Name</th>
+							<th>Januar</th>
+							<th>Febuar</th>
+							<th>Marts</th>
+							<th>April</th>
+							<th>Maj</th>
+							<th>Juni</th>
+							<th>Juli</th>
+							<th>August</th>
+							<th>September</th>
+							<th>Oktober</th>
+							<th>November</th>
+							<th>December</th>
+						</tr>
+					</tfoot>
+				</table>
+				</fieldset>
+
