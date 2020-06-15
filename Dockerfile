@@ -1,4 +1,3 @@
-FROM nginx
+FROM php:7.4-fpm
 
-COPY src /var/www 
-COPY site.conf /etc/nginx/conf.d
+COPY src /var/www/http 
