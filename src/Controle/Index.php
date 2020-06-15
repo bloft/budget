@@ -2,8 +2,12 @@
 
 class Controle_Index extends Controle_Base {
 
-	public function _index() {
-		$data = array_map('str_getcsv', file('data/data.csv'));
+  public function _index() {
+    if (file_exists("data/data.csv")) {
+      $data = array_map('str_getcsv', file('data/data.csv'));
+    } else {
+      $data = array();
+    }
 		$data[] = array("", "", "", "");
 		$this->assign('data', $data);
 		$months = array();
@@ -16,7 +20,9 @@ class Controle_Index extends Controle_Base {
 
   public function _save() {
     mkdir("data/backup/", 0755);
-		copy('data/data.csv', 'data/backup/' . time() . ".csv");
+    if (file_exists("data/data.csv")) {
+      copy('data/data.csv', 'data/backup/' . time() . ".csv");
+    }
 		$fp = fopen('data/data.csv', 'w');
 		for($i = 0; $i< 1000; $i++) {
 			if(!isset($_POST[$i . "_name"])) break;

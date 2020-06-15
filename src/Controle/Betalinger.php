@@ -3,7 +3,7 @@
 class Controle_Betalinger extends Controle_Base {
 
 	public function _index() {
-		$csv = array_map('str_getcsv', file('data.csv'));
+		$csv = array_map('str_getcsv', file('data/data.csv'));
 		$data = array();
 		$total = array("name" => "Total");
 		$min = 999999999999;

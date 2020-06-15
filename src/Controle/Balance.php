@@ -3,7 +3,7 @@
 class Controle_Balance extends Controle_Base {
 
 	public function _index() {
-		$csv = array_map('str_getcsv', file('data.csv'));
+		$csv = array_map('str_getcsv', file('data/data.csv'));
 		$data = array();
 		$indbetaling = 0;
 		$total = array("name" => "Total");
